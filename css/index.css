@@ -1,0 +1,46 @@
+#maps-div-1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*width: 100%;
+  height: 50px;*/
+  position: relative;
+}
+#maps-div-2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*width: 100%;
+  height: 50px;*/
+  position: relative;
+}
+#background-canvas, #background-canvas-2 {
+  fill: none;
+  pointer-events: all;
+}
+#canvas {
+}
+#canvas-svg {
+}
+.land {
+  fill: #222;
+}
+.countries .active {
+  fill: orange;
+}
+.boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+#tooltip-container, #tooltip-container-2{
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  border: 1px solid;
+  display: none;
+}
+.tooltip_key {
+  font-weight: bold;
+}
+.tooltip_value {
+  margin-left: 20px;
+  float: right;
+}
