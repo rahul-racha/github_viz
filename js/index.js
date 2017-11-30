@@ -276,7 +276,7 @@ var projection;
 d3.csv("population.csv", function(err, data) {
   var config = {"data0":"Country (or dependent territory)","data1":"Population",
               "label0":"label 0","label1":"label 1","color0":"#99ccff","color1":"#0050A1",
-              "width":960,"height":960}
+              "width":960,"height":960};
 
   width = config.width;
   height = config.height;
@@ -367,7 +367,8 @@ d3.csv("population.csv", function(err, data) {
   svg = d3.select("#canvas-svg-2").append("svg")
       .attr("width", width)
       .attr("height", height);
-
+  //var zoom = d3.behavior.zoom()
+  //         .scaleExtent([1, 20]);
       svg.append("rect")
         .attr("id", "background-canvas-2")
         .attr("width", width)
@@ -401,7 +402,6 @@ d3.csv("population.csv", function(err, data) {
     var countries = topojson.feature(world, world.objects.countries).features;
     aa = [-122.490402, 37.786453];
 	  bb = [-122.389809, 40.72728];
-
     svg.append("path")
        .datum(graticule)
        .attr("class", "choropleth")
@@ -417,31 +417,40 @@ d3.csv("population.csv", function(err, data) {
      // add circles to svg
 
      //var subLoc = new Array();
+
+     //var m = [-122.490402, 37.786453];
+     //var n = [-122.389809, 40.72728];
+     //location.push(m);
+     //location.push(n);
+     //location = new Array([-122.490402, 37.786453], [-122.389809, 40.72728]);
+
      d3.csv("geo.csv", function(err, data) {
        data.forEach(function(dloc) {
        console.log(dloc['lat']);
        console.log(dloc['long']);
        var lat = parseFloat(dloc['lat']);
        var long = parseFloat(dloc['long']);
-       var subLoc = new Array([lat,long]);
+       //var subLoc = new Array([lat,long]);
        location.push([lat,long]);
      });
-     //var m = [-122.490402, 37.786453];
-     //var n = [-122.389809, 40.72728];
-     //location.push(m);
-     //location.push(n);
-     //location = new Array([-122.490402, 37.786453], [-122.389809, 40.72728]);
+
      console.log(location);
-     svg.selectAll("circle")
+     g2.selectAll("circle")
      .data(location).enter()
      .append("circle")
      .attr("cx", function (d) { console.log(projection(d)); return projection(d)[0]; })
      .attr("cy", function (d) { return projection(d)[1]; })
      .attr("r", "2px")
      .attr("fill", "red");
-     });
 
-
+     // g2.selectAll("circle")
+     // .data(location).enter()
+     // .append("circle")
+     // .attr("cx", function (d) { console.log(projection(d)); return projection(d)[0]; })
+     // .attr("cy", function (d) { return projection(d)[1]; })
+     // .attr("r", "2px")
+     // .attr("fill", "red");
+  });
 /****/
     //var country = g.selectAll(".country").data(countries);
 
@@ -508,9 +517,6 @@ d3.csv("population.csv", function(err, data) {
         .attr("d", path2);
 
     svg.attr("height", config.height * 2.2 / 3);
-
-
-
   });
   // d3.json("https://s3-us-west-2.amazonaws.com/vida-public/geo/world-topo-min.json", function(error, world) {
   //   svg.selectAll(".pin")
@@ -536,7 +542,7 @@ function clicked2(d) {
     var centroid = path2.centroid(d);
     x = centroid[0];
     y = centroid[1];
-    k = 4;
+    k = 3;
     centered = d;
   } else {
     x = width / 2;
@@ -548,12 +554,28 @@ function clicked2(d) {
   g2.selectAll("path")
       .classed("active", centered && function(d) { return d === centered; });
 
+  if (d === centered) {
+    g2.selectAll("circle").remove();
+    g2.selectAll("circle")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+    .data(location).enter()
+    .append("circle")
+    .attr("cx", function (d) { console.log(projection(d)); return projection(d)[0]; })
+    .attr("cy", function (d) { return projection(d)[1]; })
+    .attr("r", "2px")
+    .attr("fill", "red");
+}
+//else {
+
+//}
+      //g2.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+
   // var newLoc = new Array();
   // location.forEach(function(dloc) {
   //   var lat = dloc['lat']-x;
   //   var long
   // }
-  //svg.selectAll("circle").remove();
+
 
   // console.log(location);
   //   svg.selectAll("circle")
