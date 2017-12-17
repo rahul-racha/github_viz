@@ -8,53 +8,108 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.1.0/topojson.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.8.0/d3-legend.min.js"></script>
     <!-- <script src="./js/index.js"></script> -->
     <script src="./js/map-script.js"></script>
     <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
     <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
     <!-- css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <!-- <script type = "text/javascript" src="d3/d3.v4.min.js"></script> -->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xs-8">
-          <div class ="row">
-            <div class="col-xs-12" id="maps-div-1">
-              <div id="tooltip-container"></div>
-              <div id="canvas-svg"></div>
-            </div>
-          </div>
-          <div class ="row">
-            <div class="col-xs-12" id="maps-div-2">
-              <div id="tooltip-container-2"></div>
-              <div id="canvas-svg-2"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-4">
-          <label>Languages</label>
-          <select id="langFilter" multiple="multiple">
-            <option value="a">C</option>
-            <option value="b">C++</option>
-            <option value="c">Java</option>
-            <option value="d">Python</option>
-            <option value="JavaScript">JavaScript</option>
-            <option value="f">PHP</option>
-            <option value="Ruby">Ruby</option>
-            <option value="g">Swift</option>
-          </select>
-          <!-- <input type="button" id="langBtn" name="Btn" value="Get"> -->
-          <label>User Type</label>
-            <select id="userFilter" multiple="multiple">
-              <option value="Organization">Organization</option>
-              <option value="User">User</option>
-            </select>
-            <!-- <input type="button" id="UserBtn" name="UserBtn" value="Get Selected" /> -->
-        </div>
+                    <div class="col-xs-5">
+
+                    <div class ="row" id="label-fields">
+                      <div class="col-xs-12">
+                        <label>Languages</label>
+                        <select id="langFilter" multiple="multiple">
+                          <option value="JavaScript">JavaScript</option>
+                          <option value="PHP">PHP</option>
+                          <option value="Ruby">Ruby</option>
+                        </select>
+                        <!-- <input type="button" id="langBtn" name="Btn" value="Get"> -->
+                        <label>User Type</label>
+                        <select id="userFilter" multiple="multiple">
+                          <option value="Organization">Organization</option>
+                          <option value="User">User</option>
+                        </select>
+                        <!-- <input type="button" id="UserBtn" name="UserBtn" value="Get Selected" /> -->
+                       </div> 
+                    </div>
+                      <div class ="row">
+                        <div class="col-xs-12" id="maps-div-1">
+                          <div id="tooltip-container"></div>
+                          <div id="canvas-svg"></div>
+                        </div>
+                      </div>
+                      <div class ="row">
+                        <div class="col-xs-12" id="maps-div-2">
+                          <div id="tooltip-container-2"></div>
+                          <div id="canvas-svg-2"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-3">
+                      <div>
+                      <img id="imageOcto" src="Octocat.png" alt="icon">
+                      </div>
+                      <div id="tagOcto">
+                      <p >GitHub Insights<br/>Top Repositories</p>
+                      </div>
+
+                    </div>
+
+                  <div class="col-xs-4">
+                    
+                    <div class="row">
+                      <div class="col-xs-12">
+                       <p id="countryName"></p>
+
+
+                        <div id="tooltip-container-bar"></div>
+
+                          <div id="canvas-svg-bar" class="bar-p">
+                            <p >Repos vs #Users</p>
+                          </div>
+
+                       </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12" id="line-log">
+                      <p></p>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12">
+                       <!-- <p id="countryName">hai</p> -->
+                            
+
+                        <div id="tooltip-container-line"></div>
+                          <div class="lineChart"></div>
+                       </div>
+                    </div>
+
+                  </div>
       </div>
+      </div>
+      <br/><br/><br/><br/>
+        <p> <font size="1" color="grey">&nbsp &nbsp <b>*</b>Repositories with Forks > 1000 and Watches > 1000 are chosen for Analysis</font></p>
+      <div>
+
+      <!-- <div class="row">
+
+      <div class="lineChart">
+      </div>  
+
+
+      </div> -->
     </div>
   </body>
 </html>

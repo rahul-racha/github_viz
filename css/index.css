@@ -44,3 +44,115 @@
   margin-left: 20px;
   float: right;
 }
+
+/*#canvas-svg-bar svg {
+       width: 560px;
+        height: 900px;
+       
+    }*/
+
+/*    .toolTip {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: absolute;
+        display: none;
+        width: auto;
+        height: auto;
+        background: none repeat scroll 0 0 white;
+        border: 0 none;
+        border-radius: 8px 8px 8px 8px;
+        box-shadow: -3px 3px 15px #888888;
+        color: black;
+        font: 12px sans-serif;
+        padding: 5px;
+        text-align: center;
+    }*/
+
+    #canvas-svg-bar text {
+        font: 10px sans-serif;
+        color: white;
+    }
+
+    #canvas-svg-bar text.value {
+        font-size: 100%;
+        fill: white;
+        text-align: center;
+    }
+
+    .axisHorizontal path{
+        fill: none;
+    }
+
+    .axisHorizontal .tick line {
+        stroke-width: 1;
+        stroke: rgba(0, 0, 0, 0.2);
+    }
+
+    .bar {
+        fill: steelblue;
+        fill-opacity: .9;
+    }
+
+
+    .axis path, .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+
+    .lineChart path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+    }
+
+    div.lineChart .tooltip {   
+    position: absolute;         
+    text-align: center;         
+    width: 100px;                    
+    height: 40px;                   
+    padding: 2px;               
+    font: 12px sans-serif;      
+    background: lightsteelblue !important;
+    border: 0px;        
+    border-radius: 8px;         
+    pointer-events: none;           
+    }
+
+    #label-fields {
+      margin-bottom: 1%;
+      margin-top: 1%;
+      margin-bottom: 3%;
+      text-align: center;
+    }
+
+    #countryName {
+      margin-bottom: 1%;
+      margin-top: 2%;
+      margin-bottom: 3%;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    #line-log p {
+      text-align: center;
+      font-weight: 400;
+      /*margin-top: 50%;*/
+    }
+
+    #imageOcto {
+     width: 50%;
+     margin-left:20%;
+     margin-top: 75%;
+    }
+    #tagOcto {
+      margin-left: 30%;
+     margin-top: 4%;
+     font-weight: 900;
+     
+    }
+
+    .bar-p p {
+      text-align: center;
+      margin-top:7%;
+      margin-bottom:-2%;
+    }
