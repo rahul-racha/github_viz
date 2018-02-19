@@ -27,6 +27,6 @@ The projects provides insights on the users statistics and distribution of the t
   |------------------------------------------------------------|------------------------------------------------------------|
   | <img src="./pictures/choropleth_1.png" width="500"/>         | <img src="./pictures/zoomed_map.png" width="500"/>      |
 
-| Repositories Distribution                                             |
+| Overview                                             |
   |------------------------------------------------------------|
   | <img src="./pictures/viz.png" width="1000"/>         |
