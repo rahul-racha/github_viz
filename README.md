@@ -19,6 +19,14 @@ The projects provides insights on the users statistics and distribution of the t
 - Users from various countries are encoded as red dots on a choropleth world map.
 - User distribution of selected country is presented by the zoomed choropleth world map II.
 
-### Overview
-- The #repositories in the selected country is shown in the bar chart.
-- The trend in the #users per year is visualized using line chart.
+### Screenshots
+- The no. of repositories in the selected country is shown in the bar chart.
+- The trend in the no. of users per year is visualized using line chart.
+
+  | Repositories Distribution                                             | User Distribution          |
+  |------------------------------------------------------------|------------------------------------------------------------|
+  | <img src="./pictures/choropleth_1.png" width="500"/>         | <img src="./pictures/zoomed_map.png" width="500"/>      |
+
+| Repositories Distribution                                             |
+  |------------------------------------------------------------|
+  | <img src="./pictures/viz.png" width="1000"/>         |
