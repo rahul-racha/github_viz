@@ -30,3 +30,6 @@ The projects provides insights on the users statistics and distribution of the t
 | Overview                                             |
   |------------------------------------------------------------|
   | <img src="./pictures/viz.png" width="1000"/>         |
+
+#
+#### Live site is found on this [link](http://www.cs.odu.edu/~rrachama/github_viz/)
